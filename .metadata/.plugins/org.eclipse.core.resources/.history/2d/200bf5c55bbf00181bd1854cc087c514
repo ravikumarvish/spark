@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package com.livefortech.spark.helloworld;
+
+import org.apache.spark.SparkConf;
+
+/**
+ * @author ravikumarvish
+ *
+ */
+public class HelloWorld {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		SparkConf conf = new SparkConf();
+		
+		
+
+	}
+
+}

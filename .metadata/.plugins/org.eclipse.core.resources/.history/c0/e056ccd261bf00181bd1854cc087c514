@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package com.livefortech.spark.helloworld;
+
+import java.util.Arrays;
+
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+
+/**
+ * @author ravikumarvish
+ *
+ */
+public class HelloWorld {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		SparkConf conf = new SparkConf().setAppName("Hello World Spark Job").setMaster("local[*]");
+		JavaSparkContext context = new JavaSparkContext(conf);
+		
+		JavaRDD<String> lines = context.textFile("in/sample.txt");
+		
+		JavaRDD<String> uppercaseLines = lines.map(line -> line.toUpperCase());
+		
+		JavaRDD<String> words = lines.map(line -> line.split(" ")[0]);
+		
+		uppercaseLines.saveAsTextFile("out/sample_output.txt");
+		
+		
+
+	}
+
+}

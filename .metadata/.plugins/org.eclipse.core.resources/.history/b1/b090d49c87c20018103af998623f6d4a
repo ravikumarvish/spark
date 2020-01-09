@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package com.livefortech.spark.pairRDD;
+
+/**
+ * @author ravikumarvish
+ *
+ */
+public class PairRDDReducerExample {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

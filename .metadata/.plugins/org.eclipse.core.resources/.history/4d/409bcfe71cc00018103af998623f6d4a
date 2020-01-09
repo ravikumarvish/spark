@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package com.livefortech.spark.rdd;
+
+import java.util.Arrays;
+
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.Function2;
+
+/**
+ * @author ravikumarvish
+ *
+ */
+public class EmployeeAction {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		SparkConf conf = new SparkConf().setAppName("Spark Action App").setMaster("local[1]");
+		JavaSparkContext context = new JavaSparkContext(conf);
+		
+		JavaRDD<String> texts = context.textFile("in/numbers.txt");
+		JavaRDD<String> textNumbers = texts.flatMap(text -> Arrays.asList(text.split("\t")).iterator());
+		
+		JavaRDD<Integer> numbers = textNumbers.map(text->Integer.valueOf(text));
+		
+		
+		Integer total2 = numbers.reduce((x,y)->x+y);
+		
+		System.out.println("Total : "+total2);
+
+	}
+
+}

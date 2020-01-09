@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package com.livefortech.spark.rdd;
+
+import org.apache.spark.SparkConf;
+
+/**
+ * @author ravikumarvish
+ *
+ */
+public class EmployeeTransformation {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		SparkConf conf = new SparkConf().setAppName("Spark Transformation App").setMaster("local[1]");
+		
+	}
+
+}

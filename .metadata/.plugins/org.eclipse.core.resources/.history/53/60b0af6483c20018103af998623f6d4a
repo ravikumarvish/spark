@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package com.livefortech.spark.pairRDD;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+
+import scala.Tuple2;
+
+/**
+ * @author ravikumarvish
+ *
+ */
+public class PairRDDCreatingUsingRegularRDD {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		SparkConf conf = new SparkConf().setAppName("Pair RDD Example").setMaster("local[1]");
+		
+		JavaSparkContext context = new JavaSparkContext(conf);
+		
+		List<String> a = Arrays.asList("1 John", "2 Peter");
+		
+        JavaRDD<String> aRDD = context.parallelize(a);
+		
+        JavaPairRDD<Integer,String> pairRDDS = context.parallelizePairs(tuples);
+		
+		pairRDDS.saveAsTextFile("out/pairRDD");
+	}
+
+}

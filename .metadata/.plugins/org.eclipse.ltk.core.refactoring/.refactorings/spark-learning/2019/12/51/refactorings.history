@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;spark-learning&apos;&#x0A;- Original project: &apos;spark-learning&apos;&#x0A;- Original element: &apos;USEmployee&apos;" description="Delete element" element1="out/USEmployee" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1576557977259" subPackages="false" version="1.0"/>
+</session>

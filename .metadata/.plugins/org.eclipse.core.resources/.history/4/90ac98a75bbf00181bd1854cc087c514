@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package com.livefortech.spark.helloworld;
+
+/**
+ * @author ravikumarvish
+ *
+ */
+public class HelloWorld {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+
+	}
+
+}
